@@ -1,0 +1,9 @@
+{
+  "name": "prince",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "prince": "^1.5.1"
+  }
+}
