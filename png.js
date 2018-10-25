@@ -36,7 +36,7 @@ async function sharpBackBPage() {
       .then(() => {
         console.log("Generating back page....");
       });
-  } catch (error) {}
+  } catch (error) { throw error}
 }
 async function sharpFrontPage() {
   try {
@@ -47,7 +47,7 @@ async function sharpFrontPage() {
       .then(() => {
         console.log("Generating front page...");
       });
-  } catch (error) {}
+  } catch (error) { throw error}
 }
 async function sharpSpinePage() {
   try {
@@ -60,6 +60,11 @@ async function sharpSpinePage() {
       });
   } catch (error) {}
 }
+
+
+
+
+
 
 // async function generate() {
 //   const options = {
