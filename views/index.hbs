@@ -1,0 +1,54 @@
+<body style="background:#dddd">
+    <div id="editorViewPort" className="editorViewPort" style={viewport}>
+        <div id="editorContainer" className="editorContainer">
+            {{#each sections }}
+            {{#compare type "Cover"}}
+            {{#each templates}}
+            {{#if isActive}}
+            {{#each bookpage.0.elements}}
+            {{#compare type "text"}}
+            {{#if isEditable}}
+            <div style="position:absolute;color:{{color}};left:{{left}}px; height:{{height}}px; width:{{width}}px; top:{{top}}px;font-size:{{fontSize}}px;
+        line-height:{{lineHeight}}px; font-family:{{fontFamily}}px; cursor:pointer;{{#if filter}} filter:blur({{filter}}px){{/if}} ">
+                {{defaultValue}}
+            </div>
+            {{else}}
+            <div style="color:{{color}}; transform-origin:left top; top:{{top}};left:{{left}}; height:{{height}}px; width:{{width}}px;font-size:{{fontSize}}px">
+                {{ defaultValue}}
+            </div>
+            {{/if}}
+            {{/compare}}
+            {{#compare type "image"}}
+            {{#if isEditable}}
+            <div style="position:absolute;color:{{color}};left:{{left}}px; height:{{height}}px; width:{{width}}px; top:{{top}}px;font-size:{{fontSize}}px;
+        line-height:{{lineHeight}}px; font-family:{{fontFamily}}px; cursor:pointer;{{#if filter}} filter:blur({{filter}}px){{/if}} ">
+                <img src="{{defaultValue}} ">
+            </div>
+
+            {{/if}}
+            {{/compare}}
+            {{/each}}
+            {{/if}}
+            {{/each}}
+            {{/compare}}
+            {{/each}}
+        </div>
+    </div>
+
+</body>
+
+
+
+{{!-- let style = {
+position: "absolute",
+left: `${element.left}px`,
+height: `${element.height}px`,
+width: `${element.width}px`,
+top: `${element.top}px`,
+fontSize: `${element.fontSize}px`,
+lineHeight: `${element.fontSize}px`,
+fontFamily: `${element.fontFamily}`,
+cursor: "pointer",
+color: element.color,
+filter: element.filter ? `blur(${element.filter}px)` : null
+}; --}}
